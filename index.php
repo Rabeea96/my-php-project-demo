@@ -16,6 +16,9 @@ $sql = "SELECT id, firstname, lastname FROM MyGuests";
 $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
+
+  echo "<h1>My PHP project - fetching data from remote MySQL</h1>";
+
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
     echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
