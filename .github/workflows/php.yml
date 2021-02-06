@@ -16,7 +16,7 @@ jobs:
 
     # This command is required to be allowed to push to heroku
     - run: |
-      git fetch --prune --unshallow
+        git fetch --prune --unshallow
 
     - name: Validate composer.json and composer.lock
       run: composer validate --no-check-publish
