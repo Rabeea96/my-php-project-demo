@@ -25,7 +25,7 @@ class UserTest extends TestCase {
         $this->assertEquals(
                 
                 // the expected value
-                15,
+                14,
                 
                 // the method which we want to test (NOTE: the 'user' object is created in the setUp() method)
                 $this->user->get_sum([1, 2, 3, 4, 5]),
