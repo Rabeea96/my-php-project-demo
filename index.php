@@ -1,5 +1,7 @@
 <?php
 
+echo '<h1>Hello world - updated2</h1>';
+
 $servername = "sql7.freemysqlhosting.net";
 $username = "sql7390181";
 $password = "5fQWjdqkQz";
