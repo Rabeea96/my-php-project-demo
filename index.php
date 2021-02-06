@@ -1,6 +1,6 @@
 <?php
 
-echo '<h1>Hello world</h1>';
+echo '<h1>Hello world - updated</h1>';
 
 $servername = "sql7.freemysqlhosting.net";
 $username = "sql7390181";
