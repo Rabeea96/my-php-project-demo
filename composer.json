@@ -1,4 +1,7 @@
 {
+    "name": "RabeeaMoussa/my-php-project-demo",
+    "description": "my-php-project-demo requirements",
+    "version": "1.0.0",
     "autoload": {
         "classmap": [
             "src/"

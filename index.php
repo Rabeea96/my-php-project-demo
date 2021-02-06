@@ -1,5 +1,17 @@
 <?php
 
+// --------------------- Using the User class ---------------------
+include './src/User.php';
+
+$user = new User();
+
+$arr = array(1,2,3,4,5);
+$sum = $user->get_sum($arr);
+echo 'The sum of the numbers (1,2,3,4,5) is: ' . $sum . '<br/><br/>';
+
+
+// --------------------- Fetching data from a remote MySQL database ---------------------
+
 $servername = "sql7.freemysqlhosting.net";
 $username = "sql7390181";
 $password = "5fQWjdqkQz";
@@ -17,7 +29,7 @@ $result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) > 0) {
 
-  echo "<h1>My PHP project - fetching data from remote MySQL</h1>";
+  echo "<h1>Fetching data from remote MySQL</h1>";
 
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
