@@ -1,5 +1,10 @@
 <?php
 
+// Loads environment variables from .env file to getenv()
+require_once './DotEnv.php';
+$dotenv = new DotEnv(__DIR__ . '/.env');
+$dotenv->load();
+
 // --------------------- Using the User class ---------------------
 include './src/User.php';
 
@@ -12,10 +17,10 @@ echo 'The sum of the numbers (1,2,3,4,5) is: ' . $sum . '<br/><br/>';
 
 // --------------------- Fetching data from a remote MySQL database ---------------------
 
-$servername = "sql7.freemysqlhosting.net";
-$username = "sql7390181";
-$password = "5fQWjdqkQz";
-$dbname = "sql7390181";
+$servername = getenv('DATABASE_SERVER');
+$username = getenv('DATABASE_USER');
+$password = getenv('DATABASE_PASSWORD');
+$dbname = getenv('DATABASE_NAME');
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
