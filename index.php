@@ -1,6 +1,6 @@
 <?php
 
-// Loads environment variables from .env file to getenv()
+// Loads environment variables from .env file to getenv() - NOTE: the environment variables will only be loaded from the .env file locally
 require_once './DotEnv.php';
 $dotenv = new DotEnv(__DIR__ . '/.env');
 $dotenv->load();
