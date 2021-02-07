@@ -20,6 +20,7 @@ class DotEnv {
 
         // When we are not on heroku - because when we are on a remote server like heroku, then the environment variables will exist on the server
         if (strpos($_SERVER['HTTP_HOST'], 'heroku') === FALSE) {
+            
             if (!is_readable($this->path)) {
                 throw new \RuntimeException(sprintf('%s file is not readable', $this->path));
             }
