@@ -10,18 +10,17 @@ class DotEnv {
 
 
     public function __construct(string $path) {
+
         // When we are not on heroku
         if (strpos($_SERVER['HTTP_HOST'], 'heroku') === FALSE) {
             if(!file_exists($path)) {
                 throw new \InvalidArgumentException(sprintf('%s does not exist', $path));
             }
+            $this->path = $path;
         }
-
-        $this->path = $path;
     }
 
     public function load() :void {
-
         // When we are not on heroku
         if (strpos($_SERVER['HTTP_HOST'], 'heroku') === FALSE) {
             if (!is_readable($this->path)) {
@@ -45,13 +44,6 @@ class DotEnv {
                     $_SERVER[$name] = $value;
                 }
             }
-        }
-        else {
-            // When we are on heroku, we load the .env variables by using the prefix "process.env."
-            putenv('DATABASE_SERVER', process.env.DATABASE_SERVER);
-            putenv('DATABASE_USER', process.env.DATABASE_USER);
-            putenv('DATABASE_PASSWORD', process.env.DATABASE_PASSWORD);
-            putenv('DATABASE_NAME', process.env.DATABASE_NAME);
         }
     }
 
